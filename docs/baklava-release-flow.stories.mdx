@@ -11,9 +11,8 @@ We use semantic-release library for making our version releases automatically. W
 | main   | `latest` | Every push to `main` branch makes a stable release. |
 | next   | `beta` | Every push to `next` branch triggers a beta release flow. |
 
-When we have some commits that has `BREAKING CHANGE` strings in commit message, that push creates a `major` release in current channel. Backward incompatible changes should have breaking change commits. We'll
-try to avoid making breaking changes as much as possible, but when we need them, maintainers will make a release plan for them. So breaking changes will not directly merged to `next` or `main` branches. We'll
-create a new branch for that kind of works to collect them once we have our first stable release.
+When our commits include the string BREAKING CHANGE in the commit message, the subsequent push triggers the creation of a major release in the current channel. It is essential to note that backward incompatible changes must be accompanied by breaking change commits. While we strive to minimize the introduction of breaking changes, if the need arises, maintainers will develop a release plan for their implementation.
+To maintain a structured development process, breaking changes will not be directly merged into the next or main branches. Instead, a new branch will be created specifically for these changes. This approach allows us to accumulate and manage breaking changes separately until we are ready to incorporate them, typically after achieving our first stable release.
 
 When we have some commits that has `feat` prefix in the message, that push creates a `minor` release that contains all of the changes.
 
